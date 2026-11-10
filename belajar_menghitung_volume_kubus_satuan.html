@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mengenal Satuan Volume & Kubus Satuan - Kelas 4 SD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .isometric-svg { filter: drop-shadow(0px 3px 5px rgba(0,0,0,0.15)); }
+    </style>
+</head>
+<body class="bg-amber-500/10 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-gradient-to-r from-amber-500 via-orange-500 to-indigo-600 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-2 md:mb-0">
+                <div class="bg-white/20 p-2.5 rounded-2xl backdrop-blur-md shadow-inner text-2xl">🧱</div>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold tracking-wide">Petualangan Volume & Kubus Satuan</h1>
+                    <p class="text-xs text-amber-100">Modul Interaktif Matematika Kelas 4 SD/MI</p>
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap justify-center gap-1 bg-black/10 p-1.5 rounded-xl backdrop-blur-sm text-xs">
+                <button onclick="switchTab('tujuan')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all bg-white text-orange-600 shadow" data-target="tujuan">🎯 Tujuan</button>
+                <button onclick="switchTab('warmup')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/10" data-target="warmup">🚀 Warm-Up</button>
+                <button onclick="switchTab('aplikasi')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/10" data-target="aplikasi">🌍 Penerapan</button>
+                <button onclick="switchTab('materi')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/10" data-target="materi">📚 Materi Lengkap</button>
+                <button onclick="switchTab('latihan')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/10" data-target="latihan">✍️ Latihan Soal</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 md:p-6">
+
+        <!-- TAB 1: TUJUAN PEMBELAJARAN -->
+        <section id="tujuan" class="tab-content active space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                <div class="max-w-2xl">
+                    <span class="inline-block bg-orange-100 text-orange-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Matematika Kelas 4</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Apa yang Akan Kita Pelajari Hari Ini? 🎯</h2>
+                    <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                        Halo teman-teman Kelas 4! Di modul ini kita akan berkenalan dengan <strong>Volume</strong> (isi ruang suatu benda) dengan cara membayangkannya langsung lewat takaran nyata dan tumpukan kubus-kubus satuan warna-warni!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl border border-amber-200/60">
+                        <div class="text-3xl mb-3">🥤</div>
+                        <h3 class="font-bold text-amber-900 mb-1">1. Satuan Tidak Baku</h3>
+                        <p class="text-xs text-amber-800 leading-relaxed">Mengenal takaran sederhana di sekitar seperti gelas, cangkir, dan gayung air.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-2xl border border-indigo-200/60">
+                        <div class="text-3xl mb-3">🧃</div>
+                        <h3 class="font-bold text-indigo-900 mb-1">2. Satuan Baku (Liter & ml)</h3>
+                        <p class="text-xs text-indigo-800 leading-relaxed">Mengenal ukuran tetap seperti Liter (l) dan Mililiter (ml) serta aturan tangganya.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-200/60">
+                        <div class="text-3xl mb-3">🧱</div>
+                        <h3 class="font-bold text-emerald-900 mb-1">3. Hitung Kubus Satuan</h3>
+                        <p class="text-xs text-emerald-800 leading-relaxed">Belajar menentukan isi/volume tumpukan kubus bertingkat dengan menghitung jumlah kubusnya.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="switchTab('warmup')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Mulai Warm-Up Tebak Bangun Ruang! 🚀
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: WARM-UP (4 SOAL TEBAK CI-CIRI & BANGUN RUANG) -->
+        <section id="warmup" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                    <div>
+                        <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Tebak Nama & Ciri Bangun Ruang</span>
+                        <h2 class="text-2xl font-bold text-slate-900">Warm-Up: Pemanasan Otak 🧠</h2>
+                        <p class="text-slate-600 text-sm">Jawab 4 teka-teki ciri-ciri bangun ruang di bawah ini sebelum masuk ke materi volume!</p>
+                    </div>
+                    <div id="warmup-score" class="mt-2 md:mt-0 bg-slate-100 px-4 py-2 rounded-xl text-xs font-bold text-slate-700">
+                        Skor Warm-Up: <span id="current-score">0</span>/4
+                    </div>
+                </div>
+
+                <!-- Warm-up Questions Container -->
+                <div id="warmup-container" class="space-y-6">
+                    <!-- Soal 1 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200" data-q="1">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">1. Aku adalah bangun ruang yang memiliki <strong class="text-amber-600">6 sisi berbentuk persegi</strong> yang semuanya <strong class="text-amber-600">persis sama besar</strong>. Siapakah aku?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkWarmup(1, 'a', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">A. Balok</button>
+                            <button onclick="checkWarmup(1, 'b', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all" data-correct="true">B. Kubus 🧊</button>
+                            <button onclick="checkWarmup(1, 'c', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">C. Tabung</button>
+                            <button onclick="checkWarmup(1, 'd', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">D. Kerucut</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-semibold hidden"></div>
+                    </div>
+
+                    <!-- Soal 2 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200" data-q="2">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">2. Aku memiliki sisi alas dan tutup berbentuk <strong class="text-amber-600">lingkaran</strong>, serta selimut melengkung seperti kaleng susu. Siapakah aku?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkWarmup(2, 'a', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">A. Kubus</button>
+                            <button onclick="checkWarmup(2, 'b', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">B. Bola</button>
+                            <button onclick="checkWarmup(2, 'c', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all" data-correct="true">C. Tabung 🥫</button>
+                            <button onclick="checkWarmup(2, 'd', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">D. Balok</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-semibold hidden"></div>
+                    </div>
+
+                    <!-- Soal 3 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200" data-q="3">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">3. Benda di bawah ini yang bentuknya paling sesuai dengan ciri-ciri bangun ruang <strong class="text-amber-600">BALOK</strong> adalah...</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkWarmup(3, 'a', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all" data-correct="true">A. Kotak Pasta Gigi 🪥</button>
+                            <button onclick="checkWarmup(3, 'b', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">B. Bola Sepak ⚽</button>
+                            <button onclick="checkWarmup(3, 'c', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">C. Dadu Mainan 🎲</button>
+                            <button onclick="checkWarmup(3, 'd', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">D. Topi Ulang Tahun 🥳</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-semibold hidden"></div>
+                    </div>
+
+                    <!-- Soal 4 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200" data-q="4">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">4. Aku adalah bangun ruang yang <strong class="text-amber-600">tidak memiliki sudut dan rusuk</strong>, permukaanku melengkung sempurna ke segala arah. Siapakah aku?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            <button onclick="checkWarmup(4, 'a', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">A. Kubus</button>
+                            <button onclick="checkWarmup(4, 'b', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all" data-correct="true">B. Bola ⚽</button>
+                            <button onclick="checkWarmup(4, 'c', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">C. Prisma</button>
+                            <button onclick="checkWarmup(4, 'd', this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-orange-500 text-xs md:text-sm font-medium transition-all">D. Balok</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-semibold hidden"></div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('tujuan')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali</button>
+                    <button onclick="switchTab('aplikasi')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Lanjut ke Penerapan Nyata 🌍
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: PENERAPAN NYATA DI SEKITAR -->
+        <section id="aplikasi" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Contoh Nyata</span>
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Di Mana Kita Menemukan Volume? 🌍</h2>
+                <p class="text-slate-600 text-sm mb-6">Tanpa sadar, kamu sering melihat dan menggunakan konsep volume dalam kehidupan sehari-hari!</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-slate-50 to-amber-50/40 p-6 rounded-2xl border border-slate-200 flex items-start space-x-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">🥛</div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 mb-1">Botol & Kotak Susu</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Saat membeli susu UHT kotak (250 ml) atau air galon (19 Liter), angka itu menunjukkan volume air di dalamnya.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-slate-50 to-indigo-50/40 p-6 rounded-2xl border border-slate-200 flex items-start space-x-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">🥄</div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 mb-1">Sendok Sirup Obat</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Ibu memberi obat sirup 5 ml menggunakan sendok takar. Itu adalah ukuran volume cairan agar pas dan tepat.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-slate-50 to-emerald-50/40 p-6 rounded-2xl border border-slate-200 flex items-start space-x-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">🧱</div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 mb-1">Mainan Balok Bertumpuk</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Ketika kamu menyusun balok-balok mainan menjadi sebuah gedung, kamu sedang menggabungkan kubus-kubus satuan untuk membentuk volume bentuk baru!</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-slate-50 to-purple-50/40 p-6 rounded-2xl border border-slate-200 flex items-start space-x-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">📦</div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 mb-1">Kardus Paket Mainan</h3>
+                            <p class="text-xs text-slate-600 leading-relaxed">Kardus berukuran besar bisa menampung banyak mainan di dalamnya. Semakin besar kardus, semakin besar volumenya.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('warmup')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali</button>
+                    <button onclick="switchTab('materi')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Lanjut ke Materi Lengkap 📚
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: MATERI LENGKAP -->
+        <section id="materi" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-8">
+                <div>
+                    <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Panduan Lengkap</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Mengenal Satuan Volume & Kubus Satuan 📚</h2>
+                    <p class="text-slate-600 text-sm">Pelajari bagaimana kita mengukur volume benda padat maupun cairan dengan mudah!</p>
+                </div>
+
+                <!-- SUB-BAGIAN 1: SATUAN VOLUME TIDAK BAKU -->
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-amber-500 text-white p-2 rounded-xl text-lg font-bold">1</span>
+                        <h3 class="font-bold text-amber-900 text-lg">Satuan Volume Tidak Baku</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs md:text-sm leading-relaxed">
+                        <strong>Satuan tidak baku</strong> adalah ukuran volume yang nilainya <em>tidak tetap</em> atau berbeda-beda jika diukur oleh orang yang berbeda.
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border border-amber-100 space-y-2 text-xs md:text-sm text-slate-700">
+                        <p class="font-semibold text-amber-800">🥛 Contoh Alat Ukur Tidak Baku:</p>
+                        <ul class="list-disc list-inside space-y-1 text-slate-600">
+                            <li>Mengisi isi botol menggunakan takaran <strong>gelas</strong>, <strong>cangkir</strong>, <strong>sendok</strong>, atau <strong>ember</strong>.</li>
+                        </ul>
+                        <div class="p-3 bg-amber-100/60 rounded-lg text-amber-900 mt-2">
+                            ⚠️ <strong>Kekurangan:</strong> Hasil pengukuran bisa berbeda! Misal: "Botol ini berisi 4 gelas air." Tapi jika diukur pakai gelas di rumah temanku yang ukurannya lebih kecil, hasilnya bisa jadi 6 gelas.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-BAGIAN 2: SATUAN VOLUME BAKU -->
+                <div class="bg-indigo-50/70 p-6 rounded-2xl border border-indigo-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-indigo-600 text-white p-2 rounded-xl text-lg font-bold">2</span>
+                        <h3 class="font-bold text-indigo-900 text-lg">Satuan Volume Baku</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs md:text-sm leading-relaxed">
+                        <strong>Satuan baku</strong> adalah satuan resmi yang ukurannya <em>selalu sama di mana saja</em>. Siapa pun yang mengukur, hasilnya pasti persis sama!
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Liter & ml -->
+                        <div class="bg-white p-4 rounded-xl border border-indigo-100 space-y-2">
+                            <h4 class="font-bold text-indigo-800 text-sm">💧 Liter (l) & Mililiter (ml)</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Biasa digunakan untuk mengukur isi benda cair.</p>
+                            <ul class="text-xs text-slate-700 space-y-1">
+                                <li>• <strong>Liter (l):</strong> Untuk cairan jumlah lebih besar (contoh: air galon, minyak 1 liter).</li>
+                                <li>• <strong>Mililiter (ml):</strong> Untuk cairan jumlah lebih kecil (contoh: sendok obat 5 ml, susu UHT).</li>
+                            </ul>
+                            <div class="bg-indigo-50 p-2.5 rounded-lg text-xs font-semibold text-indigo-900 border border-indigo-200 mt-2 space-y-1">
+                                <p>📌 <strong>Hubungan Utama:</strong></p>
+                                <p>• 1 Liter = 1.000 Mililiter (1 l = 1.000 ml)</p>
+                                <p>• 1 Mililiter = 1 cm³ (1 ml = 1 sentimeter kubik)</p>
+                            </div>
+                        </div>
+
+                        <!-- Kubus Satuan -->
+                        <div class="bg-white p-4 rounded-xl border border-indigo-100 space-y-2">
+                            <h4 class="font-bold text-indigo-800 text-sm">🧊 Kubus Satuan (cm³ dan m³)</h4>
+                            <p class="text-xs text-slate-600 leading-relaxed">Digunakan untuk mengukur volume benda padat atau ruang tiga dimensi.</p>
+                            <!-- VISUAL KUBUS SATUAN SINGLE (GAYA EDITORIAL BARU) -->
+                            <div class="flex items-center space-x-4 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                                <svg width="65" height="65" viewBox="0 0 70 70" class="isometric-svg flex-shrink-0">
+                                    <!-- Top -->
+                                    <polygon points="35,10 60,22.5 35,35 10,22.5" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <!-- Left -->
+                                    <polygon points="10,22.5 35,35 35,60 10,47.5" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <!-- Right -->
+                                    <polygon points="35,35 60,22.5 60,47.5 35,60" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                </svg>
+                                <div class="text-xs text-slate-700">
+                                    <p class="font-bold text-indigo-900">1 Kubus Satuan</p>
+                                    <p>Rusuk 1 cm → Volume = 1 cm³</p>
+                                    <p>Rusuk 1 meter → Volume = 1 m³</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-BAGIAN 3: TANGGA KONVERSI -->
+                <div class="bg-emerald-50/70 p-6 rounded-2xl border border-emerald-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-emerald-600 text-white p-2 rounded-xl text-lg font-bold">3</span>
+                        <h3 class="font-bold text-emerald-900 text-lg">Tangga Konversi Satuan Volume (Liter)</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs md:text-sm leading-relaxed">
+                        Urutan tangga satuan berbasis Liter dari tingkat terbesar ke terkecil:
+                    </p>
+
+                    <div class="flex flex-col md:flex-row gap-6 items-center">
+                        <!-- Tangga Visual -->
+                        <div class="w-full md:w-1/2 bg-white p-4 rounded-xl border border-emerald-200 space-y-1">
+                            <div class="bg-emerald-600 text-white font-bold text-xs p-2 rounded-lg w-full text-left">1. kl (Kiloliter)</div>
+                            <div class="bg-emerald-500 text-white font-bold text-xs p-2 rounded-lg w-[90%] ml-auto text-left">2. hl (Hektoliter)</div>
+                            <div class="bg-emerald-400 text-white font-bold text-xs p-2 rounded-lg w-[80%] ml-auto text-left">3. dal (Dekaliter)</div>
+                            <div class="bg-amber-500 text-white font-extrabold text-xs p-2 rounded-lg w-[70%] ml-auto text-left shadow-sm">4. l (Liter) ⭐</div>
+                            <div class="bg-teal-400 text-white font-bold text-xs p-2 rounded-lg w-[60%] ml-auto text-left">5. dl (Desiliter)</div>
+                            <div class="bg-teal-500 text-white font-bold text-xs p-2 rounded-lg w-[50%] ml-auto text-left">6. cl (Sentiliter)</div>
+                            <div class="bg-teal-600 text-white font-bold text-xs p-2 rounded-lg w-[40%] ml-auto text-left">7. ml (Mililiter)</div>
+                        </div>
+
+                        <!-- Aturan Hitung Tangga -->
+                        <div class="w-full md:w-1/2 space-y-3">
+                            <div class="bg-white p-4 rounded-xl border border-emerald-200 text-xs md:text-sm text-slate-700 space-y-2">
+                                <h4 class="font-bold text-emerald-800">⚡ Aturan Berhitung:</h4>
+                                <div class="flex items-center gap-2 text-emerald-700 font-semibold">
+                                    <span class="text-base">👇</span> Setiap <strong>TURUN 1 anak tangga</strong> → <strong>Dikali 10 (× 10)</strong>
+                                </div>
+                                <div class="flex items-center gap-2 text-indigo-700 font-semibold">
+                                    <span class="text-base">👆</span> Setiap <strong>NAIK 1 anak tangga</strong> → <strong>Dibagi 10 (÷ 10)</strong>
+                                </div>
+                            </div>
+                            <div class="bg-emerald-100 p-3 rounded-xl text-xs text-emerald-900 font-medium">
+                                💡 <strong>Contoh Singkat:</strong><br>
+                                2 Liter = 2 × 1.000 = 2.000 ml (karena turun 3 anak tangga dari Liter ke ml).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-BAGIAN 4: BAGAIMANA MENENTUKAN VOLUME TUMPUKAN KUBUS? -->
+                <div class="bg-purple-50/70 p-6 rounded-2xl border border-purple-200 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-purple-600 text-white p-2 rounded-xl text-lg font-bold">4</span>
+                        <h3 class="font-bold text-purple-900 text-lg">Bagaimana Cara Menentukan Volume Tumpukan Kubus?</h3>
+                    </div>
+                    <p class="text-slate-700 text-xs md:text-sm leading-relaxed">
+                        Untuk anak Kelas 4, <strong>kita tidak perlu memakai rumus yang rumit!</strong> Cukup dengan cara menghitung banyaknya kubus satuan pada tumpukan gambar dengan menghitung tiap kubus yang menyusunnya.
+                    </p>
+
+                    <!-- Contoh Gambar Tumpukan Bertingkat Visual SVG -->
+                    <div class="bg-white p-5 rounded-2xl border border-purple-100 flex flex-col sm:flex-row items-center gap-6">
+                        <div class="bg-amber-100/50 p-4 rounded-xl border border-amber-300 flex items-center justify-center">
+                            <!-- Visual Isometric SVG Step Example (Stylized Bold Outlines) -->
+                            <svg width="120" height="120" viewBox="0 0 100 100" class="isometric-svg">
+                                <!-- Kubus Bawah Belakang -->
+                                <g transform="translate(35, 15)">
+                                    <polygon points="15,0 30,7.5 15,15 0,7.5" fill="#ff758f" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="0,7.5 15,15 15,30 0,22.5" fill="#ffb703" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="15,15 30,7.5 30,22.5 15,30" fill="#4ea8de" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Kubus Bawah Kiri -->
+                                <g transform="translate(20, 22.5)">
+                                    <polygon points="15,0 30,7.5 15,15 0,7.5" fill="#ff758f" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="0,7.5 15,15 15,30 0,22.5" fill="#ffb703" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="15,15 30,7.5 30,22.5 15,30" fill="#4ea8de" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Kubus Bawah Kanan -->
+                                <g transform="translate(50, 22.5)">
+                                    <polygon points="15,0 30,7.5 15,15 0,7.5" fill="#ff758f" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="0,7.5 15,15 15,30 0,22.5" fill="#ffb703" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="15,15 30,7.5 30,22.5 15,30" fill="#4ea8de" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Kubus Bawah Depan -->
+                                <g transform="translate(35, 30)">
+                                    <polygon points="15,0 30,7.5 15,15 0,7.5" fill="#ff758f" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="0,7.5 15,15 15,30 0,22.5" fill="#ffb703" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="15,15 30,7.5 30,22.5 15,30" fill="#4ea8de" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Kubus Atas Belakang -->
+                                <g transform="translate(35, 0)">
+                                    <polygon points="15,0 30,7.5 15,15 0,7.5" fill="#ff758f" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="0,7.5 15,15 15,30 0,22.5" fill="#ffb703" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <polygon points="15,15 30,7.5 30,22.5 15,30" fill="#4ea8de" stroke="#000" stroke-width="1.5" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="text-xs md:text-sm text-slate-700 space-y-2">
+                            <h4 class="font-bold text-purple-900">🔍 Langkah Mudah Menghitung:</h4>
+                            <ol class="list-decimal list-inside space-y-1 text-slate-600">
+                                <li><strong>Hitung Lantai Bawah:</strong> Ada 4 kubus di bagian dasar.</li>
+                                <li><strong>Hitung Lantai Atas:</strong> Ada 1 kubus menumpuk di atas.</li>
+                                <li><strong>Jumlahkan Semua:</strong> 4 + 1 = 5 kubus satuan.</li>
+                            </ol>
+                            <div class="p-2.5 bg-purple-100 text-purple-900 rounded-lg font-bold text-center border border-purple-200">
+                                Jadi, volume bentuk di atas adalah 5 Kubus Satuan! ✨
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('aplikasi')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali</button>
+                    <button onclick="switchTab('latihan')" class="bg-orange-500 hover:bg-orange-600 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Lanjut ke Latihan Soal Interaktif ✍️
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: LATIHAN SOAL TERBIMBING -->
+        <section id="latihan" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                
+                <!-- HEADER WORKSHEET LIKE IN THE REFERENCE PHOTO -->
+                <div class="border-4 border-slate-900 rounded-2xl p-4 md:p-6 mb-8 bg-amber-500/5">
+                    <div class="flex flex-col sm:flex-row justify-between border-b-2 border-slate-900 pb-3 mb-4 text-xs font-bold tracking-wider">
+                        <div>NAMA: <span class="border-b border-dashed border-slate-900 px-8 py-0.5">Siswa Kelas 4</span></div>
+                        <div class="mt-2 sm:mt-0">TANGGAL: <span class="border-b border-dashed border-slate-900 px-6 py-0.5">Hari Ini</span></div>
+                    </div>
+
+                    <div class="text-center py-2">
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-teal-600 tracking-wide uppercase">MENGHITUNG VOLUME KUBUS SATUAN</h2>
+                        <p class="text-xs md:text-sm font-medium text-slate-700 mt-2 max-w-xl mx-auto">
+                            Volume adalah cara kita mengukur isi ruang bangun 3 dimensi. Hitunglah banyaknya kubus satuan pada tiap gambar tumpukan di bawah ini dengan tepat!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-xs font-bold text-slate-500">Lembar Latihan Interaktif</span>
+                    <div class="bg-orange-100 px-4 py-2 rounded-xl text-xs font-bold text-orange-800 border border-orange-300">
+                        Skor Latihan: <span id="exercise-score">0</span>/4
+                    </div>
+                </div>
+
+                <!-- Grid Soal Interaktif 2x2 Presisi Seperti Contoh Referensi Gambar -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="exercise-grid">
+                    
+                    <!-- SOAL 1: (2x2x1 = 4 Kubus) -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-slate-900 flex flex-col items-center justify-between shadow-sm" data-ex="1">
+                        <div class="w-full flex justify-between items-center mb-2">
+                            <span class="text-xs font-extrabold text-slate-400">SOAL #1</span>
+                        </div>
+                        
+                        <!-- Visual SVG Isometric Ultra Clear (4 Cubes) -->
+                        <div class="my-4 py-2 flex items-center justify-center">
+                            <svg width="150" height="160" viewBox="0 0 140 150" class="isometric-svg">
+                                <!-- Cube 1: Top Back Left -->
+                                <g transform="translate(40, 20)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Cube 2: Top Back Right -->
+                                <g transform="translate(60, 30)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Cube 3: Front Left -->
+                                <g transform="translate(40, 50)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Cube 4: Front Right -->
+                                <g transform="translate(60, 60)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <!-- Answer Input Box Like Photo -->
+                        <div class="w-full mt-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <input type="number" id="ans-1" placeholder="?" class="w-24 px-3 py-2 text-center text-lg font-extrabold border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <span class="font-bold text-slate-800 text-sm">kubus</span>
+                                <button onclick="checkExercise(1, 4)" class="ml-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all">Cek</button>
+                            </div>
+                            <div id="feedback-ex-1" class="text-xs font-bold text-center mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- SOAL 2: (Gambar Bentuk Bertangga = 7 Kubus) -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-slate-900 flex flex-col items-center justify-between shadow-sm" data-ex="2">
+                        <div class="w-full flex justify-between items-center mb-2">
+                            <span class="text-xs font-extrabold text-slate-400">SOAL #2</span>
+                        </div>
+
+                        <!-- Visual SVG Isometric (7 Cubes) -->
+                        <div class="my-4 py-2 flex items-center justify-center">
+                            <svg width="150" height="160" viewBox="0 0 140 150" class="isometric-svg">
+                                <!-- Row 1 Bottom (3 cubes) -->
+                                <g transform="translate(20, 50)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(40, 60)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(60, 70)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                
+                                <!-- Row 2 Middle (3 cubes behind/stacked) -->
+                                <g transform="translate(20, 20)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(40, 30)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(60, 40)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+
+                                <!-- Top 1 Cube -->
+                                <g transform="translate(40, 0)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                            </svg>
+                        </div>
+
+                        <!-- Answer Input Box -->
+                        <div class="w-full mt-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <input type="number" id="ans-2" placeholder="?" class="w-24 px-3 py-2 text-center text-lg font-extrabold border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <span class="font-bold text-slate-800 text-sm">kubus</span>
+                                <button onclick="checkExercise(2, 7)" class="ml-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all">Cek</button>
+                            </div>
+                            <div id="feedback-ex-2" class="text-xs font-bold text-center mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- SOAL 3: (Menara L Bentuk Vertikal = 6 Kubus) -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-slate-900 flex flex-col items-center justify-between shadow-sm" data-ex="3">
+                        <div class="w-full flex justify-between items-center mb-2">
+                            <span class="text-xs font-extrabold text-slate-400">SOAL #3</span>
+                        </div>
+
+                        <!-- Visual SVG Isometric (6 Cubes) -->
+                        <div class="my-4 py-2 flex items-center justify-center">
+                            <svg width="150" height="160" viewBox="0 0 140 150" class="isometric-svg">
+                                <!-- Top Tower (3 cubes high) -->
+                                <g transform="translate(30, 0)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(30, 20)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(30, 40)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                
+                                <!-- Back Tower Parallel -->
+                                <g transform="translate(50, 10)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(50, 30)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                
+                                <!-- Front Step -->
+                                <g transform="translate(50, 55)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                            </svg>
+                        </div>
+
+                        <!-- Answer Input Box -->
+                        <div class="w-full mt-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <input type="number" id="ans-3" placeholder="?" class="w-24 px-3 py-2 text-center text-lg font-extrabold border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <span class="font-bold text-slate-800 text-sm">kubus</span>
+                                <button onclick="checkExercise(3, 6)" class="ml-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all">Cek</button>
+                            </div>
+                            <div id="feedback-ex-3" class="text-xs font-bold text-center mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                    <!-- SOAL 4: (Bentuk Z/Zigzag = 5 Kubus) -->
+                    <div class="bg-white p-6 rounded-2xl border-2 border-slate-900 flex flex-col items-center justify-between shadow-sm" data-ex="4">
+                        <div class="w-full flex justify-between items-center mb-2">
+                            <span class="text-xs font-extrabold text-slate-400">SOAL #4</span>
+                        </div>
+
+                        <!-- Visual SVG Isometric (5 Cubes Zigzag) -->
+                        <div class="my-4 py-2 flex items-center justify-center">
+                            <svg width="150" height="160" viewBox="0 0 140 150" class="isometric-svg">
+                                <!-- Top Row (2 cubes) -->
+                                <g transform="translate(30, 20)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(50, 30)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+
+                                <!-- Middle Stem (1 cube) -->
+                                <g transform="translate(50, 50)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+
+                                <!-- Bottom Extension (2 cubes) -->
+                                <g transform="translate(50, 70)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                                <g transform="translate(70, 80)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="0,10 20,20 20,35 0,25" fill="#ffb703" stroke="#000" stroke-width="2" stroke-linejoin="round"/><polygon points="20,20 40,10 40,25 20,35" fill="#4ea8de" stroke="#000" stroke-width="2" stroke-linejoin="round"/></g>
+                            </svg>
+                        </div>
+
+                        <!-- Answer Input Box -->
+                        <div class="w-full mt-2">
+                            <div class="flex items-center justify-center gap-2">
+                                <input type="number" id="ans-4" placeholder="?" class="w-24 px-3 py-2 text-center text-lg font-extrabold border-2 border-slate-900 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 bg-white">
+                                <span class="font-bold text-slate-800 text-sm">kubus</span>
+                                <button onclick="checkExercise(4, 5)" class="ml-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-xl text-xs transition-all">Cek</button>
+                            </div>
+                            <div id="feedback-ex-4" class="text-xs font-bold text-center mt-2 hidden"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('materi')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali ke Materi</button>
+                    <div class="text-xs text-slate-600 font-bold">Hore! Kamu berhasil menghitung semua tumpukan kubus satuan! 🎉</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
+        <p>Modul Interaktif Matematika Kelas 4 SD/MI • Mengenal Satuan Volume & Kubus Satuan</p>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Tab Switching Logic
+        function switchTab(targetId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-orange-600', 'shadow');
+                btn.classList.add('text-white', 'hover:bg-white/10');
+            });
+
+            document.getElementById(targetId).classList.add('active');
+            const activeBtn = document.querySelector(`button[data-target="${targetId}"]`);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-white', 'hover:bg-white/10');
+                activeBtn.classList.add('bg-white', 'text-orange-600', 'shadow');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Warmup Score Tracker
+        let warmupCorrectCount = 0;
+        const answeredWarmup = {};
+
+        function checkWarmup(questionNum, chosenOpt, btnElement) {
+            const parentItem = btnElement.closest('.warmup-item');
+            const feedbackDiv = parentItem.querySelector('.feedback-msg');
+            const allBtns = parentItem.querySelectorAll('.option-btn');
+
+            if(answeredWarmup[questionNum]) return; // Prevent double click
+
+            allBtns.forEach(b => {
+                b.disabled = true;
+                if(b.getAttribute('data-correct') === 'true') {
+                    b.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-800');
+                }
+            });
+
+            const isCorrect = btnElement.getAttribute('data-correct') === 'true';
+            answeredWarmup[questionNum] = true;
+
+            feedbackDiv.classList.remove('hidden');
+            if(isCorrect) {
+                warmupCorrectCount++;
+                btnElement.classList.add('bg-emerald-100', 'border-emerald-600', 'text-emerald-900');
+                feedbackDiv.textContent = '🎉 Hebat sekali! Jawaban kamu benar.';
+                feedbackDiv.className = 'feedback-msg mt-2 text-xs font-bold text-emerald-600';
+            } else {
+                btnElement.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                feedbackDiv.textContent = '❌ Masih kurang tepat. Ingat-ingat ciri bangun ruangnya ya!';
+                feedbackDiv.className = 'feedback-msg mt-2 text-xs font-bold text-rose-600';
+            }
+
+            document.getElementById('current-score').textContent = warmupCorrectCount;
+        }
+
+        // Exercise Score Tracker
+        let exerciseCorrectCount = 0;
+        const answeredExercise = {};
+
+        function checkExercise(exNum, correctValue) {
+            const inputField = document.getElementById(`ans-${exNum}`);
+            const feedbackDiv = document.getElementById(`feedback-ex-${exNum}`);
+            const userVal = parseInt(inputField.value);
+
+            if(isNaN(userVal)) {
+                feedbackDiv.textContent = '⚠️ Masukkan angka jawabanmu dulu ya!';
+                feedbackDiv.className = 'text-xs font-bold text-amber-600 mt-2 block';
+                return;
+            }
+
+            if(answeredExercise[exNum]) return; // Prevent score dupe
+
+            feedbackDiv.classList.remove('hidden');
+            if(userVal === correctValue) {
+                answeredExercise[exNum] = true;
+                exerciseCorrectCount++;
+                inputField.disabled = true;
+                inputField.classList.add('bg-emerald-50', 'border-emerald-600', 'text-emerald-700');
+                feedbackDiv.textContent = `🎉 Tepat sekali! Volume = ${correctValue} kubus.`;
+                feedbackDiv.className = 'text-xs font-bold text-emerald-600 mt-2 block';
+            } else {
+                feedbackDiv.textContent = `❌ Belum tepat. Coba hitung lagi kubusnya ya!`;
+                feedbackDiv.className = 'text-xs font-bold text-rose-600 mt-2 block';
+            }
+
+            document.getElementById('exercise-score').textContent = exerciseCorrectCount;
+        }
+    </script>
+</body>
+</html>
