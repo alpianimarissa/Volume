@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Satuan Volume & Volume Kubus Balok - Kelas 4 SD</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- KaTeX CSS & JS untuk merender rumus matematika -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+        });"></script>
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .isometric-svg { filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.12)); }
+    </style>
+</head>
+<body class="bg-sky-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header / Navbar -->
+    <header class="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-3 md:py-4 flex flex-col lg:flex-row justify-between items-center gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="bg-white/20 p-2.5 rounded-2xl backdrop-blur-md shadow-inner text-2xl">📦</div>
+                <div>
+                    <h1 class="text-lg md:text-xl font-bold tracking-wide">Konversi Volume & Volume Kubus Balok</h1>
+                    <p class="text-xs text-sky-100">Modul Interaktif Matematika Kelas 4 SD/MI (Lanjutan)</p>
+                </div>
+            </div>
+            <!-- Navigation Tabs -->
+            <nav class="flex flex-wrap justify-center gap-1 bg-black/15 p-1.5 rounded-xl backdrop-blur-sm text-xs">
+                <button onclick="switchTab('tujuan')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all bg-white text-indigo-700 shadow" data-target="tujuan">🎯 Tujuan</button>
+                <button onclick="switchTab('warmup')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/15" data-target="warmup">🚀 Warm-Up</button>
+                <button onclick="switchTab('aplikasi')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/15" data-target="aplikasi">🌍 Penerapan</button>
+                <button onclick="switchTab('materi')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/15" data-target="materi">📚 Materi Lengkap</button>
+                <button onclick="switchTab('contoh')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/15" data-target="contoh">💡 Contoh Soal</button>
+                <button onclick="switchTab('latihan')" class="tab-btn px-3 py-1.5 font-semibold rounded-lg transition-all text-white hover:bg-white/15" data-target="latihan">✍️ Latihan Terbimbing</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow max-w-6xl w-full mx-auto p-4 md:p-6">
+
+        <!-- TAB 1: TUJUAN PEMBELAJARAN -->
+        <section id="tujuan" class="tab-content active space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 mb-6 flex items-center gap-3">
+                    <span class="text-2xl">🔗</span>
+                    <p class="text-xs md:text-sm text-amber-900">
+                        <strong>Ingat Pelajaran Sebelumnya?</strong> Kemarin kita sudah mengenal satuan tak baku (gelas/sendok), satuan liter & ml, serta menghitung volume dengan membilang satu per satu tumpukan kubus satuan. Hari ini kita naik tingkat!
+                    </p>
+                </div>
+
+                <div class="max-w-3xl">
+                    <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full mb-3">Matematika Kelas 4 SD</span>
+                    <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-3">Tujuan Pembelajaran Hari Ini 🎯</h2>
+                    <p class="text-slate-600 text-sm md:text-base leading-relaxed">
+                        Setelah menyelesaikan petualangan interaktif ini, kamu akan jago mengubah satuan volume dan menghitung isi kotak kubus maupun balok dengan cepat!
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
+                    <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border border-blue-200">
+                        <div class="text-3xl mb-3">🪜</div>
+                        <h3 class="font-bold text-blue-900 mb-1">1. Konversi Satuan Volume</h3>
+                        <p class="text-xs text-blue-800 leading-relaxed">Mengubah satuan berbasis <strong>Liter (kl sampai ml)</strong> dan mengenal kesetaraan penting antara <strong>Liter, dm³, ml, dan cm³</strong>.</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl border border-amber-200">
+                        <div class="text-3xl mb-3">🧊</div>
+                        <h3 class="font-bold text-amber-900 mb-1">2. Volume Kubus</h3>
+                        <p class="text-xs text-amber-800 leading-relaxed">Menemukan cara cepat menghitung volume kubus dari susunan kubus satuan maupun panjang rusuknya ($V = s \times s \times s$).</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-6 rounded-2xl border border-teal-200">
+                        <div class="text-3xl mb-3">📦</div>
+                        <h3 class="font-bold text-teal-900 mb-1">3. Volume Balok</h3>
+                        <p class="text-xs text-teal-800 leading-relaxed">Menentukan volume balok dengan mengalikan panjang, lebar, dan tingginya ($V = p \times l \times t$).</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center">
+                    <button onclick="switchTab('warmup')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-7 py-3.5 rounded-xl shadow-md transition-all text-sm">
+                        Mulai Pemanasan (Warm-Up 4 Soal) 🚀
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: WARM-UP (4 SOAL MENGINGAT MATERI SEBELUMNYA) -->
+        <section id="warmup" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                    <div>
+                        <span class="inline-block bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Mengingat Materi Sebelumnya</span>
+                        <h2 class="text-2xl font-bold text-slate-900">Warm-Up: Cek Ingatanmu! 🧠</h2>
+                        <p class="text-slate-600 text-sm">Kerjakan 4 soal pemanasan berikut sebelum kita belajar rumus dan konversi lanjutan.</p>
+                    </div>
+                    <div class="mt-3 md:mt-0 bg-indigo-50 border border-indigo-200 px-4 py-2 rounded-xl text-xs font-bold text-indigo-800">
+                        Skor Warm-Up: <span id="warmup-score-display">0</span>/4
+                    </div>
+                </div>
+
+                <div class="space-y-5">
+                    <!-- Warmup 1 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">1. Pada pelajaran sebelumnya, jika turun <strong>1 anak tangga</strong> pada tangga satuan Liter (misal dari Liter ke dl), maka bilangannya harus...</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <button onclick="checkWarmup(1, this)" data-correct="true" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">A. Dikali 10 ($\times 10$)</button>
+                            <button onclick="checkWarmup(1, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">B. Dibagi 10 ($\div 10$)</button>
+                            <button onclick="checkWarmup(1, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">C. Ditambah 10 ($+ 10$)</button>
+                            <button onclick="checkWarmup(1, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">D. Dikali 1.000 ($\times 1.000$)</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-bold hidden"></div>
+                    </div>
+
+                    <!-- Warmup 2 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">2. Ibu membeli <strong>1 Liter</strong> susu cair. Jika dituang ke dalam gelas takar mililiter, isinya sama dengan...</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <button onclick="checkWarmup(2, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">A. $10\text{ ml}$</button>
+                            <button onclick="checkWarmup(2, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">B. $100\text{ ml}$</button>
+                            <button onclick="checkWarmup(2, this)" data-correct="true" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">C. $1.000\text{ ml}$</button>
+                            <button onclick="checkWarmup(2, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">D. $10.000\text{ ml}$</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-bold hidden"></div>
+                    </div>
+
+                    <!-- Warmup 3 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-3">
+                            <p class="font-semibold text-slate-800 text-sm md:text-base flex-grow">3. Perhatikan susunan kubus satuan di samping! Berapakah volume bangun tersebut?</p>
+                            <!-- SVG 6 Kubus Satuan (3x2x1) -->
+                            <div class="bg-white p-2 rounded-xl border border-slate-200 self-start">
+                                <svg width="110" height="80" viewBox="0 0 130 95" class="isometric-svg">
+                                    <!-- Belakang Kiri -->
+                                    <g transform="translate(25, 10)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8"/></g>
+                                    <!-- Belakang Tengah -->
+                                    <g transform="translate(45, 20)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8"/></g>
+                                    <!-- Belakang Kanan -->
+                                    <g transform="translate(65, 30)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8"/></g>
+                                    <!-- Depan Kiri -->
+                                    <g transform="translate(5, 20)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8"/></g>
+                                    <!-- Depan Tengah -->
+                                    <g transform="translate(25, 30)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8"/></g>
+                                    <!-- Depan Kanan -->
+                                    <g transform="translate(45, 40)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8"/></g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <button onclick="checkWarmup(3, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">A. 4 kubus satuan</button>
+                            <button onclick="checkWarmup(3, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">B. 5 kubus satuan</button>
+                            <button onclick="checkWarmup(3, this)" data-correct="true" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">C. 6 kubus satuan</button>
+                            <button onclick="checkWarmup(3, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">D. 8 kubus satuan</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-bold hidden"></div>
+                    </div>
+
+                    <!-- Warmup 4 -->
+                    <div class="warmup-item bg-slate-50 p-5 rounded-2xl border border-slate-200">
+                        <p class="font-semibold text-slate-800 text-sm md:text-base mb-3">4. Manakah pernyataan yang <strong>BENAR</strong> tentang perbedaan bangun ruang Kubus dan Balok?</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                            <button onclick="checkWarmup(4, this)" data-correct="true" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">A. Semua rusuk kubus sama panjang, sedangkan balok memiliki panjang, lebar, dan tinggi.</button>
+                            <button onclick="checkWarmup(4, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">B. Kubus memiliki sisi lingkaran, sedangkan balok tidak punya sudut.</button>
+                            <button onclick="checkWarmup(4, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">C. Balok punya 4 sisi, sedangkan kubus punya 6 sisi.</button>
+                            <button onclick="checkWarmup(4, this)" class="option-btn text-left p-3 rounded-xl bg-white border border-slate-200 hover:border-indigo-500 text-xs md:text-sm font-medium transition-all">D. Kubus dan balok tidak bisa diisi air atau benda.</button>
+                        </div>
+                        <div class="feedback-msg mt-2 text-xs font-bold hidden"></div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('tujuan')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali</button>
+                    <button onclick="switchTab('aplikasi')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Lanjut ke Penerapan Nyata 🌍
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 3: PENERAPAN NYATA -->
+        <section id="aplikasi" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200">
+                <span class="inline-block bg-teal-100 text-teal-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Dalam Kehidupan Sehari-hari</span>
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Mengapa Kita Perlu Menghitung Volume Kubus & Balok? 🌍</h2>
+                <p class="text-slate-600 text-sm mb-6">Lihatlah sekelilingmu! Banyak benda berbentuk kubus dan balok yang harus kita ketahui isinya (volumenya).</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-2xl border border-blue-200 flex items-start gap-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">🐠</div>
+                        <div>
+                            <h3 class="font-bold text-blue-950 mb-1">Mengisi Air Akuarium (Balok)</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Akuarium berbentuk <strong>balok</strong>. Dengan menghitung volumenya dalam $\text{cm}^3$ lalu mengubahnya ke <strong>Liter</strong>, kita tahu berapa ember air yang dibutuhkan agar akuarium penuh dan tidak tumpah!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-2xl border border-amber-200 flex items-start gap-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">🧊</div>
+                        <div>
+                            <h3 class="font-bold text-amber-950 mb-1">Bak Mandi Berbentuk Kubus</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Banyak bak mandi di rumah berbentuk <strong>kubus</strong>. Jika panjang sisinya $10\text{ dm}$ ($1\text{ meter}$), maka volumenya adalah $1.000\text{ dm}^3$ atau setara dengan <strong>$1.000\text{ Liter}$</strong> air!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-6 rounded-2xl border border-emerald-200 flex items-start gap-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">📦</div>
+                        <div>
+                            <h3 class="font-bold text-emerald-950 mb-1">Mengemas Kotak Kado & Paket</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Kurir paket menghitung volume kardus (panjang $\times$ lebar $\times$ tinggi) untuk mengatur susunan barang di dalam mobil boks agar muat banyak dan rapi.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border border-purple-200 flex items-start gap-4">
+                        <div class="text-4xl bg-white p-3 rounded-2xl shadow-sm">🧃</div>
+                        <div>
+                            <h3 class="font-bold text-purple-950 mb-1">Membandingkan Isi Minuman Kemasan</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed">
+                                Kotak susu $250\text{ ml}$ dan botol $1\text{ Liter}$ ($1.000\text{ ml}$) menggunakan satuan berbeda. Dengan konversi satuan, kita tahu $1\text{ Liter}$ sama dengan $4$ kotak susu!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('warmup')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali</button>
+                    <button onclick="switchTab('materi')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Lanjut ke Materi Lengkap 📚
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 4: MATERI LENGKAP -->
+        <section id="materi" class="tab-content space-y-8">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-8">
+                <div>
+                    <span class="inline-block bg-indigo-100 text-indigo-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Inti Pembelajaran</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Materi Lengkap: Konversi & Volume Kubus Balok 📚</h2>
+                    <p class="text-slate-600 text-sm">Pelajari tiga bagian penting di bawah ini secara perlahan dan amati ilustrasinya!</p>
+                </div>
+
+                <!-- BAGIAN A: KONVERSI SATUAN VOLUME -->
+                <div class="bg-sky-50/70 p-6 rounded-2xl border border-sky-200 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold">A</span>
+                        <h3 class="font-bold text-blue-950 text-lg">Konversi Satuan Volume & Jembatan Ajaib</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                        <!-- Tangga Konversi Liter -->
+                        <div class="bg-white p-5 rounded-2xl border border-sky-200 space-y-2">
+                            <h4 class="font-bold text-slate-800 text-sm mb-2">1. Tangga Satuan Liter (Setiap langkah $\times 10$ atau $\div 10$)</h4>
+                            <div class="space-y-1 text-xs font-bold">
+                                <div class="bg-blue-700 text-white px-3 py-1.5 rounded-lg w-full">kl (Kiloliter)</div>
+                                <div class="bg-blue-600 text-white px-3 py-1.5 rounded-lg w-[90%] ml-auto">hl (Hektoliter)</div>
+                                <div class="bg-blue-500 text-white px-3 py-1.5 rounded-lg w-[80%] ml-auto">dal (Dekaliter)</div>
+                                <div class="bg-amber-500 text-white px-3 py-1.5 rounded-lg w-[70%] ml-auto shadow">l (Liter) ⭐ = $1\text{ dm}^3$</div>
+                                <div class="bg-teal-500 text-white px-3 py-1.5 rounded-lg w-[60%] ml-auto">dl (Desiliter)</div>
+                                <div class="bg-teal-600 text-white px-3 py-1.5 rounded-lg w-[50%] ml-auto">cl (Sentiliter)</div>
+                                <div class="bg-teal-700 text-white px-3 py-1.5 rounded-lg w-[40%] ml-auto shadow">ml (Mililiter) ⭐ = $1\text{ cm}^3$</div>
+                            </div>
+                        </div>
+
+                        <!-- Jembatan Kesetaraan Satuan -->
+                        <div class="space-y-4">
+                            <div class="bg-white p-5 rounded-2xl border-2 border-amber-400 shadow-sm space-y-3">
+                                <h4 class="font-bold text-amber-800 text-sm flex items-center gap-2">🌉 Jembatan Kesetaraan Satuan (Wajib Hafal!)</h4>
+                                <p class="text-xs text-slate-600">Satuan cair (<strong>Liter</strong>) dan satuan bangun ruang (<strong>kubik / $^3$</strong>) saling terhubung erat:</p>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-center">
+                                    <div class="bg-amber-50 p-3 rounded-xl border border-amber-200">
+                                        <p class="text-xs text-amber-700 font-semibold">Satuan Besar</p>
+                                        <p class="text-base font-extrabold text-amber-950 mt-1">$1\text{ Liter} = 1\text{ dm}^3$</p>
+                                    </div>
+                                    <div class="bg-teal-50 p-3 rounded-xl border border-teal-200">
+                                        <p class="text-xs text-teal-700 font-semibold">Satuan Kecil</p>
+                                        <p class="text-base font-extrabold text-teal-950 mt-1">$1\text{ ml} = 1\text{ cm}^3 = 1\text{ cc}$</p>
+                                    </div>
+                                </div>
+                                <div class="bg-indigo-50 p-3 rounded-xl border border-indigo-200 text-center">
+                                    <p class="text-xs font-bold text-indigo-900">
+                                        🔥 $1\text{ Liter} = 1.000\text{ ml} = 1.000\text{ cm}^3$
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Kalkulator Konversi Interaktif Mini -->
+                            <div class="bg-white p-4 rounded-2xl border border-sky-200">
+                                <p class="text-xs font-bold text-slate-700 mb-2">🧪 Coba Konverter Mini:</p>
+                                <div class="flex flex-wrap items-center gap-2 text-xs">
+                                    <input type="number" id="conv-input" value="3" min="0" oninput="updateMiniConverter()" class="w-20 px-2.5 py-1.5 border-2 border-blue-400 rounded-lg font-bold text-center">
+                                    <select id="conv-type" onchange="updateMiniConverter()" class="px-2.5 py-1.5 border-2 border-blue-400 rounded-lg font-semibold bg-white">
+                                        <option value="l_to_ml">Liter (l) → Mililiter (ml)</option>
+                                        <option value="ml_to_l">Mililiter (ml) → Liter (l)</option>
+                                        <option value="l_to_cm3">Liter (l) → cm³</option>
+                                        <option value="dm3_to_ml">dm³ → ml</option>
+                                    </select>
+                                    <span class="font-bold text-slate-500">=</span>
+                                    <span id="conv-result" class="bg-blue-100 text-blue-900 font-extrabold px-3 py-1.5 rounded-lg">3.000 ml</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN B: MENENTUKAN VOLUME KUBUS -->
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-amber-500 text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold">B</span>
+                        <h3 class="font-bold text-amber-950 text-lg">Menentukan Volume Kubus 🧊</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <!-- Ilustrasi SVG Kubus 2x2x2 dengan Label Rusuk -->
+                        <div class="bg-white p-5 rounded-2xl border border-amber-200 flex flex-col items-center">
+                            <p class="text-xs font-bold text-amber-800 mb-2">Ilustrasi Kubus ($s = 2\text{ satuan}$)</p>
+                            <svg width="210" height="190" viewBox="0 0 210 190" class="isometric-svg">
+                                <!-- Layer Bawah (4 kubus) -->
+                                <!-- Bawah Belakang -->
+                                <g transform="translate(85, 45)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Bawah Kiri -->
+                                <g transform="translate(65, 55)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Bawah Kanan -->
+                                <g transform="translate(105, 55)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Bawah Depan -->
+                                <g transform="translate(85, 65)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+
+                                <!-- Layer Atas (4 kubus) -->
+                                <!-- Atas Belakang -->
+                                <g transform="translate(85, 25)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Atas Kiri -->
+                                <g transform="translate(65, 35)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Atas Kanan -->
+                                <g transform="translate(105, 35)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+                                <!-- Atas Depan -->
+                                <g transform="translate(85, 45)">
+                                    <polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.8" stroke-linejoin="round"/>
+                                </g>
+
+                                <!-- Garis Dimensi Label -->
+                                <line x1="60" y1="90" x2="100" y2="110" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="3,2"/>
+                                <text x="35" y="115" fill="#e11d48" font-size="11" font-weight="bold">s = 2</text>
+
+                                <line x1="110" y1="110" x2="150" y2="90" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="3,2"/>
+                                <text x="142" y="115" fill="#0284c7" font-size="11" font-weight="bold">s = 2</text>
+
+                                <line x1="153" y1="45" x2="153" y2="85" stroke="#059669" stroke-width="2.5" stroke-dasharray="3,2"/>
+                                <text x="160" y="70" fill="#059669" font-size="11" font-weight="bold">s = 2</text>
+                            </svg>
+                            <p class="text-[11px] text-slate-500 text-center">Lapis bawah = 4 kubus, Lapis atas = 4 kubus → Total = 8 kubus satuan</p>
+                        </div>
+
+                        <!-- Penjelasan & Rumus Kubus -->
+                        <div class="space-y-3 text-xs md:text-sm text-slate-700">
+                            <p class="leading-relaxed">
+                                <strong>Kubus</strong> memiliki panjang, lebar, dan tinggi yang <strong>semuanya sama panjang</strong>. Panjang garis tepinya disebut <strong>rusuk ($s$)</strong>.
+                            </p>
+                            <div class="bg-white p-4 rounded-xl border-2 border-amber-400 space-y-2">
+                                <p class="font-bold text-amber-900">📐 Cara Cepat Menghitung Volume Kubus:</p>
+                                <div class="bg-amber-100/80 p-3 rounded-lg text-center font-extrabold text-amber-950 text-base">
+                                    $\text{Volume Kubus} = s \times s \times s$
+                                </div>
+                                <p class="text-xs text-slate-600">
+                                    <strong>Keterangan:</strong> $s$ = panjang rusuk kubus.<br>
+                                    Pada gambar di samping: $V = 2 \times 2 \times 2 = 8\text{ kubus satuan}$.
+                                </p>
+                            </div>
+                            <div class="bg-amber-100/60 p-3 rounded-xl text-xs text-amber-900">
+                                💡 <strong>Tips:</strong> Jika rusuk kubus memakai satuan $\text{cm}$, maka hasil volumenya memakai satuan <strong>$\text{cm}^3$</strong> (sentimeter kubik).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BAGIAN C: MENENTUKAN VOLUME BALOK -->
+                <div class="bg-teal-50/70 p-6 rounded-2xl border border-teal-200 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-teal-600 text-white w-8 h-8 rounded-xl flex items-center justify-center font-bold">C</span>
+                        <h3 class="font-bold text-teal-950 text-lg">Menentukan Volume Balok 📦</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <!-- Ilustrasi SVG Balok 3x2x2 dengan Label p, l, t -->
+                        <div class="bg-white p-5 rounded-2xl border border-teal-200 flex flex-col items-center">
+                            <p class="text-xs font-bold text-teal-800 mb-2">Ilustrasi Balok ($p = 3$, $l = 2$, $t = 2$)</p>
+                            <svg width="240" height="195" viewBox="0 0 240 195" class="isometric-svg">
+                                <!-- Layer Bawah (6 kubus: 3x2) -->
+                                <g transform="translate(80, 45)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(100, 55)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(120, 65)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+
+                                <g transform="translate(60, 55)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(80, 65)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(100, 75)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+
+                                <!-- Layer Atas (6 kubus: 3x2) -->
+                                <g transform="translate(80, 25)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(100, 35)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(120, 45)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+
+                                <g transform="translate(60, 35)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(80, 45)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+                                <g transform="translate(100, 55)"><polygon points="20,0 40,10 20,20 0,10" fill="#ff758f" stroke="#000" stroke-width="1.6"/><polygon points="0,10 20,20 20,40 0,30" fill="#ffb703" stroke="#000" stroke-width="1.6"/><polygon points="20,20 40,10 40,30 20,40" fill="#4ea8de" stroke="#000" stroke-width="1.6"/></g>
+
+                                <!-- Label Panjang (p) -->
+                                <line x1="56" y1="90" x2="116" y2="120" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="3,2"/>
+                                <text x="35" y="122" fill="#e11d48" font-size="11" font-weight="bold">p = 3</text>
+
+                                <!-- Label Lebar (l) -->
+                                <line x1="124" y1="120" x2="164" y2="100" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="3,2"/>
+                                <text x="155" y="122" fill="#0284c7" font-size="11" font-weight="bold">l = 2</text>
+
+                                <!-- Label Tinggi (t) -->
+                                <line x1="168" y1="55" x2="168" y2="95" stroke="#059669" stroke-width="2.5" stroke-dasharray="3,2"/>
+                                <text x="175" y="80" fill="#059669" font-size="11" font-weight="bold">t = 2</text>
+                            </svg>
+                            <p class="text-[11px] text-slate-500 text-center">Alas = $3 \times 2 = 6$ kubus, ditumpuk $2$ tingkat → Total = $12$ kubus satuan</p>
+                        </div>
+
+                        <!-- Penjelasan & Rumus Balok -->
+                        <div class="space-y-3 text-xs md:text-sm text-slate-700">
+                            <p class="leading-relaxed">
+                                <strong>Balok</strong> memiliki tiga ukuran utama, yaitu <strong>panjang ($p$)</strong>, <strong>lebar ($l$)</strong>, dan <strong>tinggi ($t$)</strong>.
+                            </p>
+                            <div class="bg-white p-4 rounded-xl border-2 border-teal-500 space-y-2">
+                                <p class="font-bold text-teal-900">📐 Cara Cepat Menghitung Volume Balok:</p>
+                                <div class="bg-teal-100/80 p-3 rounded-lg text-center font-extrabold text-teal-950 text-base">
+                                    $\text{Volume Balok} = p \times l \times t$
+                                </div>
+                                <p class="text-xs text-slate-600">
+                                    <strong>Keterangan:</strong> $p$ = panjang, $l$ = lebar, $t$ = tinggi.<br>
+                                    Pada gambar di samping: $V = 3 \times 2 \times 2 = 12\text{ kubus satuan}$.
+                                </p>
+                            </div>
+                            <div class="bg-teal-100/60 p-3 rounded-xl text-xs text-teal-900">
+                                💡 <strong>Ingat:</strong> Pastikan satuan $p$, $l$, dan $t$ sudah sama sebelum dikalikan ya!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('aplikasi')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali</button>
+                    <button onclick="switchTab('contoh')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Lanjut ke Contoh Soal 💡
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 5: CONTOH SOAL & PEMBAHASAN -->
+        <section id="contoh" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                <div>
+                    <span class="inline-block bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full mb-2">Belajar dari Contoh</span>
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Contoh Soal & Langkah Penyelesaian 💡</h2>
+                    <p class="text-slate-600 text-sm">Perhatikan langkah-langkah penyelesaian soal di bawah ini sebelum mencoba latihan sendiri.</p>
+                </div>
+
+                <!-- Contoh 1: Konversi -->
+                <div class="bg-sky-50/70 p-6 rounded-2xl border border-sky-200 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-blue-600 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Contoh 1 • Konversi Satuan</span>
+                    </div>
+                    <p class="font-semibold text-slate-800 text-sm md:text-base">
+                        Sebuah botol minum berisi $2\text{ Liter}$ air, lalu dituang lagi $500\text{ ml}$ air ke dalamnya. Berapa $\text{cm}^3$ total air di dalam botol tersebut sekarang?
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border border-sky-200 text-xs md:text-sm space-y-1.5 text-slate-700">
+                        <p class="font-bold text-blue-800">✅ Pembahasan Langkah demi Langkah:</p>
+                        <p>1. Ingat jembatan satuan: $1\text{ Liter} = 1.000\text{ cm}^3$ dan $1\text{ ml} = 1\text{ cm}^3$.</p>
+                        <p>2. Ubah semua ke $\text{cm}^3$:</p>
+                        <ul class="list-disc list-inside pl-3 text-slate-600">
+                            <li>$2\text{ Liter} = 2 \times 1.000 = 2.000\text{ cm}^3$</li>
+                            <li>$500\text{ ml} = 500\text{ cm}^3$</li>
+                        </ul>
+                        <p>3. Jumlahkan keduanya: $2.000\text{ cm}^3 + 500\text{ cm}^3 = \mathbf{2.500\text{ cm}^3}$.</p>
+                    </div>
+                </div>
+
+                <!-- Contoh 2: Volume Kubus -->
+                <div class="bg-amber-50/70 p-6 rounded-2xl border border-amber-200 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-amber-600 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Contoh 2 • Volume Kubus</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-5 items-center">
+                        <!-- Ilustrasi Kubus s = 5 cm -->
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 flex-shrink-0">
+                            <svg width="140" height="130" viewBox="0 0 140 130" class="isometric-svg">
+                                <!-- Top face -->
+                                <polygon points="70,15 115,37 70,60 25,37" fill="#fde047" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <!-- Left face -->
+                                <polygon points="25,37 70,60 70,110 25,87" fill="#f59e0b" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <!-- Right face -->
+                                <polygon points="70,60 115,37 115,87 70,110" fill="#d97706" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <text x="20" y="108" fill="#92400e" font-size="11" font-weight="bold">5 cm</text>
+                                <text x="95" y="108" fill="#92400e" font-size="11" font-weight="bold">5 cm</text>
+                                <text x="118" y="65" fill="#92400e" font-size="11" font-weight="bold">5 cm</text>
+                            </svg>
+                        </div>
+                        <div class="space-y-2 flex-grow">
+                            <p class="font-semibold text-slate-800 text-sm md:text-base">
+                                Sebuah kotak kado berbentuk <strong>kubus</strong> memiliki panjang rusuk $s = 5\text{ cm}$. Hitunglah volume kotak kado tersebut!
+                            </p>
+                            <div class="bg-white p-4 rounded-xl border border-amber-200 text-xs md:text-sm space-y-1 text-slate-700">
+                                <p class="font-bold text-amber-800">✅ Pembahasan:</p>
+                                <p>• Diketahui: $s = 5\text{ cm}$</p>
+                                <p>• Rumus: $V = s \times s \times s$</p>
+                                <p>• Hitung: $V = 5 \times 5 \times 5 = 25 \times 5 = \mathbf{125\text{ cm}^3}$.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contoh 3: Volume Balok -->
+                <div class="bg-teal-50/70 p-6 rounded-2xl border border-teal-200 space-y-3">
+                    <div class="flex items-center gap-2">
+                        <span class="bg-teal-600 text-white text-xs font-bold px-2.5 py-1 rounded-lg">Contoh 3 • Volume Balok</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-5 items-center">
+                        <!-- Ilustrasi Balok p=10, l=4, t=5 -->
+                        <div class="bg-white p-3 rounded-xl border border-teal-200 flex-shrink-0">
+                            <svg width="170" height="130" viewBox="0 0 170 130" class="isometric-svg">
+                                <!-- Top face -->
+                                <polygon points="95,20 145,42 75,75 25,53" fill="#5eead4" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <!-- Left face (panjang) -->
+                                <polygon points="25,53 75,75 75,112 25,90" fill="#14b8a6" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <!-- Right face (lebar) -->
+                                <polygon points="75,75 145,42 145,79 75,112" fill="#0f766e" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <text x="15" y="108" fill="#115e59" font-size="11" font-weight="bold">p = 10 cm</text>
+                                <text x="108" y="106" fill="#115e59" font-size="11" font-weight="bold">l = 4 cm</text>
+                                <text x="147" y="64" fill="#115e59" font-size="10" font-weight="bold">t=5</text>
+                            </svg>
+                        </div>
+                        <div class="space-y-2 flex-grow">
+                            <p class="font-semibold text-slate-800 text-sm md:text-base">
+                                Sebuah kotak pensil berbentuk <strong>balok</strong> berukuran panjang $10\text{ cm}$, lebar $4\text{ cm}$, dan tinggi $5\text{ cm}$. Berapa $\text{cm}^3$ volumenya?
+                            </p>
+                            <div class="bg-white p-4 rounded-xl border border-teal-200 text-xs md:text-sm space-y-1 text-slate-700">
+                                <p class="font-bold text-teal-800">✅ Pembahasan:</p>
+                                <p>• Diketahui: $p = 10\text{ cm}$, $l = 4\text{ cm}$, $t = 5\text{ cm}$</p>
+                                <p>• Rumus: $V = p \times l \times t$</p>
+                                <p>• Hitung: $V = 10 \times 4 \times 5 = 40 \times 5 = \mathbf{200\text{ cm}^3}$.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 flex justify-between items-center">
+                    <button onclick="switchTab('materi')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali ke Materi</button>
+                    <button onclick="switchTab('latihan')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-6 py-3 rounded-xl shadow-md transition-all text-sm">
+                        Mulai Latihan Soal Terbimbing ✍️
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 6: LATIHAN SOAL TERBIMBING -->
+        <section id="latihan" class="tab-content space-y-6">
+            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-sm border border-slate-200 space-y-6">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-slate-200 pb-4">
+                    <div>
+                        <span class="inline-block bg-emerald-100 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full mb-2">Uji Pemahaman dengan Bantuan</span>
+                        <h2 class="text-2xl font-bold text-slate-900">Latihan Soal Terbimbing ✍️</h2>
+                        <p class="text-slate-600 text-sm">Isi kotak yang kosong secara bertahap. Jika bingung, klik tombol <strong>"💡 Bantuan Petunjuk"</strong>!</p>
+                    </div>
+                    <div class="mt-3 md:mt-0 bg-emerald-50 border border-emerald-300 px-4 py-2 rounded-xl text-xs font-bold text-emerald-800">
+                        Soal Selesai: <span id="guided-score">0</span>/4
+                    </div>
+                </div>
+
+                <!-- SOAL TERBIMBING 1: Konversi Satuan -->
+                <div class="bg-sky-50/50 p-6 rounded-2xl border-2 border-sky-200 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-lg">Latihan 1 • Konversi Satuan</span>
+                        <button onclick="toggleHint(1)" class="text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded-lg transition-all">💡 Bantuan Petunjuk</button>
+                    </div>
+                    <p class="font-semibold text-slate-800 text-sm md:text-base">
+                        Ibu membeli minyak goreng kemasan $4\text{ Liter}$. Berapa $\text{ml}$ dan berapa $\text{cm}^3$ volume minyak goreng tersebut?
+                    </p>
+                    <div id="hint-1" class="hidden bg-amber-50 border border-amber-300 p-3 rounded-xl text-xs text-amber-900">
+                        🔍 <strong>Petunjuk:</strong> Dari Liter ke mililiter turun 3 tangga, jadi dikali $1.000$. Ingat juga bahwa $1\text{ ml} = 1\text{ cm}^3$!
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 text-xs md:text-sm">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span>Langkah 1: $4\text{ Liter} = 4 \times$</span>
+                            <input type="number" id="g1-step1" placeholder="?" class="w-24 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                            <span>$=$</span>
+                            <input type="number" id="g1-step2" placeholder="?" class="w-28 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                            <span>$\text{ml}$</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span>Langkah 2: Karena $1\text{ ml} = 1\text{ cm}^3$, maka hasilnya $=$</span>
+                            <input type="number" id="g1-step3" placeholder="?" class="w-28 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                            <span>$\text{cm}^3$</span>
+                            <button onclick="checkGuided1()" class="ml-auto bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Periksa Jawaban</button>
+                        </div>
+                        <div id="fb-g1" class="text-xs font-bold hidden"></div>
+                    </div>
+                </div>
+
+                <!-- SOAL TERBIMBING 2: Volume Kubus -->
+                <div class="bg-amber-50/50 p-6 rounded-2xl border-2 border-amber-200 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-lg">Latihan 2 • Volume Kubus</span>
+                        <button onclick="toggleHint(2)" class="text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded-lg transition-all">💡 Bantuan Petunjuk</button>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-5 items-center">
+                        <!-- Ilustrasi Kubus s = 4 cm -->
+                        <div class="bg-white p-3 rounded-xl border border-amber-200 flex-shrink-0">
+                            <svg width="130" height="120" viewBox="0 0 130 120" class="isometric-svg">
+                                <polygon points="65,12 108,33 65,55 22,33" fill="#fde047" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <polygon points="22,33 65,55 65,100 22,78" fill="#f59e0b" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <polygon points="65,55 108,33 108,78 65,100" fill="#d97706" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <text x="15" y="98" fill="#92400e" font-size="11" font-weight="bold">s = 4 cm</text>
+                            </svg>
+                        </div>
+                        <div class="space-y-3 flex-grow w-full">
+                            <p class="font-semibold text-slate-800 text-sm md:text-base">
+                                Sebuah dadu raksasa berbentuk <strong>kubus</strong> memiliki panjang rusuk $s = 4\text{ cm}$. Hitung volumenya secara bertahap!
+                            </p>
+                            <div id="hint-2" class="hidden bg-amber-100/70 border border-amber-300 p-3 rounded-xl text-xs text-amber-950">
+                                🔍 <strong>Petunjuk:</strong> Gunakan rumus $V = s \times s \times s = 4 \times 4 \times 4$. Kalikan dua angka depan dulu ($4 \times 4 = 16$), lalu kalikan $4$ lagi!
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 text-xs md:text-sm">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span>Langkah 1: $V = 4 \times 4 \times$</span>
+                                    <input type="number" id="g2-step1" placeholder="?" class="w-16 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                                </div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span>Langkah 2: $V =$</span>
+                                    <input type="number" id="g2-step2" placeholder="?" class="w-24 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                                    <span>$\text{cm}^3$</span>
+                                    <button onclick="checkGuided2()" class="ml-auto bg-amber-600 hover:bg-amber-700 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Periksa Jawaban</button>
+                                </div>
+                                <div id="fb-g2" class="text-xs font-bold hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOAL TERBIMBING 3: Volume Balok -->
+                <div class="bg-teal-50/50 p-6 rounded-2xl border-2 border-teal-200 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-teal-600 text-white text-xs font-bold px-3 py-1 rounded-lg">Latihan 3 • Volume Balok</span>
+                        <button onclick="toggleHint(3)" class="text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded-lg transition-all">💡 Bantuan Petunjuk</button>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-5 items-center">
+                        <!-- Ilustrasi Balok p=6, l=3, t=4 -->
+                        <div class="bg-white p-3 rounded-xl border border-teal-200 flex-shrink-0">
+                            <svg width="160" height="125" viewBox="0 0 160 125" class="isometric-svg">
+                                <polygon points="90,18 138,38 72,68 24,48" fill="#5eead4" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <polygon points="24,48 72,68 72,105 24,85" fill="#14b8a6" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <polygon points="72,68 138,38 138,75 72,105" fill="#0f766e" stroke="#000" stroke-width="2" stroke-linejoin="round"/>
+                                <text x="16" y="102" fill="#115e59" font-size="10" font-weight="bold">p = 6 cm</text>
+                                <text x="102" y="100" fill="#115e59" font-size="10" font-weight="bold">l = 3 cm</text>
+                                <text x="140" y="60" fill="#115e59" font-size="10" font-weight="bold">t=4</text>
+                            </svg>
+                        </div>
+                        <div class="space-y-3 flex-grow w-full">
+                            <p class="font-semibold text-slate-800 text-sm md:text-base">
+                                Sebuah kotak susu berbentuk <strong>balok</strong> memiliki panjang $6\text{ cm}$, lebar $3\text{ cm}$, dan tinggi $4\text{ cm}$. Berapa volume kotak susu tersebut?
+                            </p>
+                            <div id="hint-3" class="hidden bg-amber-100/70 border border-amber-300 p-3 rounded-xl text-xs text-amber-950">
+                                🔍 <strong>Petunjuk:</strong> Gunakan rumus $V = p \times l \times t = 6 \times 3 \times 4$. Hitung luas alasnya dulu ($6 \times 3 = 18$), lalu dikali tinggi ($4$).
+                            </div>
+                            <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 text-xs md:text-sm">
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span>Langkah 1: Luas alas ($p \times l$) $= 6 \times 3 =$</span>
+                                    <input type="number" id="g3-step1" placeholder="?" class="w-20 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                                    <span>$\text{cm}^2$</span>
+                                </div>
+                                <div class="flex flex-wrap items-center gap-2">
+                                    <span>Langkah 2: Volume $=$ hasil alas $\times 4 =$</span>
+                                    <input type="number" id="g3-step2" placeholder="?" class="w-24 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                                    <span>$\text{cm}^3$</span>
+                                    <button onclick="checkGuided3()" class="ml-auto bg-teal-600 hover:bg-teal-700 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Periksa Jawaban</button>
+                                </div>
+                                <div id="fb-g3" class="text-xs font-bold hidden"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SOAL TERBIMBING 4: Gabungan Balok & Konversi Liter -->
+                <div class="bg-indigo-50/50 p-6 rounded-2xl border-2 border-indigo-200 space-y-4">
+                    <div class="flex justify-between items-center">
+                        <span class="bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-lg">Latihan 4 • Tantangan Gabungan (Balok → Liter)</span>
+                        <button onclick="toggleHint(4)" class="text-xs font-bold text-amber-700 bg-amber-100 hover:bg-amber-200 px-3 py-1 rounded-lg transition-all">💡 Bantuan Petunjuk</button>
+                    </div>
+                    <p class="font-semibold text-slate-800 text-sm md:text-base">
+                        Sebuah akuarium berbentuk balok memiliki panjang $20\text{ cm}$, lebar $10\text{ cm}$, dan tinggi $15\text{ cm}$. Jika diisi air sampai penuh, berapa <strong>Liter</strong> air yang ada di dalamnya?
+                    </p>
+                    <div id="hint-4" class="hidden bg-amber-100/70 border border-amber-300 p-3 rounded-xl text-xs text-amber-950">
+                        🔍 <strong>Petunjuk:</strong> Hitung dulu volume balok dalam $\text{cm}^3$ ($20 \times 10 \times 15$). Setelah ketemu hasilnya dalam $\text{cm}^3$, bagi dengan $1.000$ untuk mengubahnya ke <strong>Liter</strong>!
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200 space-y-3 text-xs md:text-sm">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span>Langkah 1: Volume dalam $\text{cm}^3 = 20 \times 10 \times 15 =$</span>
+                            <input type="number" id="g4-step1" placeholder="?" class="w-28 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                            <span>$\text{cm}^3$</span>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span>Langkah 2: Ubah ke Liter ($\div 1.000$) $=$</span>
+                            <input type="number" id="g4-step2" placeholder="?" class="w-20 px-2 py-1 border-2 border-slate-300 rounded-lg text-center font-bold">
+                            <span>$\text{Liter}$</span>
+                            <button onclick="checkGuided4()" class="ml-auto bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-1.5 rounded-lg text-xs">Periksa Jawaban</button>
+                        </div>
+                        <div id="fb-g4" class="text-xs font-bold hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Banner Selesai -->
+                <div id="completion-banner" class="hidden bg-gradient-to-r from-emerald-500 to-teal-600 text-white p-6 rounded-2xl text-center space-y-2 shadow-md">
+                    <div class="text-4xl">🏆🎉</div>
+                    <h3 class="text-xl font-extrabold">Luar Biasa! Kamu Menuntaskan Semua Latihan!</h3>
+                    <p class="text-xs md:text-sm text-emerald-50">Kamu sekarang sudah mahir mengonversi satuan volume dan menghitung volume kubus maupun balok.</p>
+                </div>
+
+                <div class="mt-6 flex justify-between items-center">
+                    <button onclick="switchTab('contoh')" class="text-slate-500 text-xs font-semibold hover:text-slate-800">← Kembali ke Contoh Soal</button>
+                    <button onclick="switchTab('tujuan')" class="text-indigo-600 text-xs font-bold hover:underline">Ulangi dari Awal ↺</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-5 mt-12 text-center text-xs text-slate-500">
+        <p>Modul Interaktif Matematika Kelas 4 SD/MI • Konversi Satuan Volume & Volume Kubus Balok</p>
+    </footer>
+
+    <!-- JavaScript Interaktif -->
+    <script>
+        // Tab Switching
+        function switchTab(targetId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-indigo-700', 'shadow');
+                btn.classList.add('text-white', 'hover:bg-white/15');
+            });
+
+            document.getElementById(targetId).classList.add('active');
+            const activeBtn = document.querySelector(`button[data-target="${targetId}"]`);
+            if (activeBtn) {
+                activeBtn.classList.remove('text-white', 'hover:bg-white/15');
+                activeBtn.classList.add('bg-white', 'text-indigo-700', 'shadow');
+            }
+            // Pastikan rumus KaTeX ikut ter-render saat berpindah tab
+            if (typeof renderMathInElement === 'function') {
+                renderMathInElement(document.getElementById(targetId), {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Warm-Up Logic
+        let warmupScore = 0;
+        const warmupDone = {};
+
+        function checkWarmup(qNum, btn) {
+            if (warmupDone[qNum]) return;
+            warmupDone[qNum] = true;
+
+            const container = btn.closest('.warmup-item');
+            const feedback = container.querySelector('.feedback-msg');
+            const buttons = container.querySelectorAll('.option-btn');
+            const isCorrect = btn.getAttribute('data-correct') === 'true';
+
+            buttons.forEach(b => {
+                b.disabled = true;
+                if (b.getAttribute('data-correct') === 'true') {
+                    b.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
+                }
+            });
+
+            feedback.classList.remove('hidden');
+            if (isCorrect) {
+                warmupScore++;
+                btn.classList.add('bg-emerald-100', 'border-emerald-600');
+                feedback.textContent = '🎉 Tepat sekali! Ingatanmu masih sangat tajam.';
+                feedback.className = 'feedback-msg mt-2 text-xs font-bold text-emerald-600';
+            } else {
+                btn.classList.add('bg-rose-100', 'border-rose-500', 'text-rose-900');
+                feedback.textContent = '❌ Kurang tepat, perhatikan jawaban hijau di atas ya!';
+                feedback.className = 'feedback-msg mt-2 text-xs font-bold text-rose-600';
+            }
+
+            document.getElementById('warmup-score-display').textContent = warmupScore;
+        }
+
+        // Mini Converter in Materi
+        function updateMiniConverter() {
+            const val = parseFloat(document.getElementById('conv-input').value) || 0;
+            const type = document.getElementById('conv-type').value;
+            const resEl = document.getElementById('conv-result');
+
+            if (type === 'l_to_ml') {
+                resEl.textContent = (val * 1000).toLocaleString('id-ID') + ' ml';
+            } else if (type === 'ml_to_l') {
+                resEl.textContent = (val / 1000).toLocaleString('id-ID') + ' Liter';
+            } else if (type === 'l_to_cm3') {
+                resEl.textContent = (val * 1000).toLocaleString('id-ID') + ' cm³';
+            } else if (type === 'dm3_to_ml') {
+                resEl.textContent = (val * 1000).toLocaleString('id-ID') + ' ml';
+            }
+        }
+
+        // Hints Toggle
+        function toggleHint(num) {
+            const hint = document.getElementById(`hint-${num}`);
+            hint.classList.toggle('hidden');
+        }
+
+        // Guided Exercises Logic
+        const guidedCompleted = { 1: false, 2: false, 3: false, 4: false };
+
+        function updateGuidedProgress() {
+            const total = Object.values(guidedCompleted).filter(Boolean).length;
+            document.getElementById('guided-score').textContent = total;
+            if (total === 4) {
+                document.getElementById('completion-banner').classList.remove('hidden');
+            }
+        }
+
+        function checkGuided1() {
+            const s1 = parseInt(document.getElementById('g1-step1').value);
+            const s2 = parseInt(document.getElementById('g1-step2').value);
+            const s3 = parseInt(document.getElementById('g1-step3').value);
+            const fb = document.getElementById('fb-g1');
+            fb.classList.remove('hidden');
+
+            if (s1 === 1000 && s2 === 4000 && s3 === 4000) {
+                fb.textContent = '🎉 Benar semua! 4 Liter = 4.000 ml = 4.000 cm³.';
+                fb.className = 'text-xs font-bold text-emerald-600 block';
+                guidedCompleted[1] = true;
+                updateGuidedProgress();
+            } else {
+                fb.textContent = '⚠️ Masih ada angka yang kurang pas. Ingat: 1 Liter = 1.000 ml dan 1 ml = 1 cm³.';
+                fb.className = 'text-xs font-bold text-rose-600 block';
+            }
+        }
+
+        function checkGuided2() {
+            const s1 = parseInt(document.getElementById('g2-step1').value);
+            const s2 = parseInt(document.getElementById('g2-step2').value);
+            const fb = document.getElementById('fb-g2');
+            fb.classList.remove('hidden');
+
+            if (s1 === 4 && s2 === 64) {
+                fb.textContent = '🎉 Hebat! Volume kubus = 4 × 4 × 4 = 64 cm³.';
+                fb.className = 'text-xs font-bold text-emerald-600 block';
+                guidedCompleted[2] = true;
+                updateGuidedProgress();
+            } else {
+                fb.textContent = '⚠️ Belum tepat. Coba cek kembali: 4 × 4 = 16, lalu 16 × 4 = ...?';
+                fb.className = 'text-xs font-bold text-rose-600 block';
+            }
+        }
+
+        function checkGuided3() {
+            const s1 = parseInt(document.getElementById('g3-step1').value);
+            const s2 = parseInt(document.getElementById('g3-step2').value);
+            const fb = document.getElementById('fb-g3');
+            fb.classList.remove('hidden');
+
+            if (s1 === 18 && s2 === 72) {
+                fb.textContent = '🎉 Keren! Luas alas 18 cm², dikali tinggi 4 cm = 72 cm³.';
+                fb.className = 'text-xs font-bold text-emerald-600 block';
+                guidedCompleted[3] = true;
+                updateGuidedProgress();
+            } else {
+                fb.textContent = '⚠️ Cek lagi perkaliannya ya: 6 × 3 = 18, lalu 18 × 4 = ...?';
+                fb.className = 'text-xs font-bold text-rose-600 block';
+            }
+        }
+
+        function checkGuided4() {
+            const s1 = parseInt(document.getElementById('g4-step1').value);
+            const s2 = parseInt(document.getElementById('g4-step2').value);
+            const fb = document.getElementById('fb-g4');
+            fb.classList.remove('hidden');
+
+            if (s1 === 3000 && s2 === 3) {
+                fb.textContent = '🎉 Sempurna! 20 × 10 × 15 = 3.000 cm³ = 3 Liter air.';
+                fb.className = 'text-xs font-bold text-emerald-600 block';
+                guidedCompleted[4] = true;
+                updateGuidedProgress();
+            } else {
+                fb.textContent = '⚠️ Hampir berhasil! 20 × 10 = 200, lalu 200 × 15 = 3.000 cm³. Setelah itu bagi 1.000 ya!';
+                fb.className = 'text-xs font-bold text-rose-600 block';
+            }
+        }
+    </script>
+</body>
+</html>
